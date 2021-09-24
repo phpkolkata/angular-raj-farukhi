@@ -1,0 +1,14 @@
+<h1>{{ title }}</h1>
+<h1>{{ getTitle() }}</h1>
+
+<!-- 1.Data binding (string interpolation, property binding, event binding, two way binding) -->
+<!-- ts->html = (string interpolation, property binding)
+html->ts = (event binding) and passing data to event binding using $event and (input) event
+ts -><- html = (both side communication), two way binding (ngModel) -->
+
+<input type="text" (input)="showData($event)" />
+
+<br />
+two way binding:
+<input type="text" [ngModel]="title" /><br />
+<button (click)="onPressButton()">click me</button>
