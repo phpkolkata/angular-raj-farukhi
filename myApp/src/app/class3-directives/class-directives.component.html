@@ -10,3 +10,17 @@
 
 <div *ngIf="box">this is box</div>
 <button (click)="showHide()">hide</button>
+<hr />
+
+<ul *ngFor="let p of products">
+  <li>{{ p.name }} {{ p.price }}</li>
+</ul>
+
+<hr />
+
+<div [ngSwitch]="age">
+  <div *ngSwitchCase="age <= 3">infant</div>
+  <div *ngSwitchCase="age <= 13">Kid</div>
+  <div *ngSwitchCase="age <= 19">teen</div>
+  <div *ngSwitchCase="age > 19">adult</div>
+</div>

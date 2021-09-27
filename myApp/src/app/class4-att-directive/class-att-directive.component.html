@@ -1,0 +1,7 @@
+<div [ngStyle]="{ color: red ? 'red' : 'blue' }">hello this is my file</div>
+<input type="checkbox" (input)="chColor($event)" />
+
+<div [ngClass]="{ box: isBox }">my div</div>
+<button (click)="chClass()">change</button>
+
+<div [style.color]="getColor()">my div 2</div>

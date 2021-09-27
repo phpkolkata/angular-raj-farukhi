@@ -10,5 +10,10 @@ ts -><- html = (both side communication), two way binding (ngModel) -->
 
 <br />
 two way binding:
-<input type="text" [ngModel]="title" /><br />
+<input type="text" [(ngModel)]="title" /><br />
 <button (click)="onPressButton()">click me</button>
+<hr />
+Property Binding:<br />
+<button [disabled]="!allowClick">click me</button>
+<p>{{ myText }}</p>
+<p [innerHtml]="myText">bnbb</p>

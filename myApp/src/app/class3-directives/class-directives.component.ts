@@ -7,6 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassDirectivesComponent {
   box = true;
+  age = 3;
+  products = [
+    {
+      name: 'nokia',
+      price: '300',
+    },
+    {
+      name: 'samung',
+      price: '400',
+    },
+    {
+      name: 'lg',
+      price: '500',
+    },
+    {
+      name: 'moto',
+      price: '600',
+    },
+  ];
 
   showHide() {
     if (this.box) {

@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassDatabindingComponent {
   title = 'myApp';
+  allowClick = false;
+  myText = 'hello world';
+
+  constructor() {
+    setTimeout(() => {
+      this.allowClick = true;
+    }, 2000);
+  }
 
   getTitle() {
     return 'my Page title';
