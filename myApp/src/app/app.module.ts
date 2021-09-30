@@ -9,6 +9,10 @@ import { LogoComponent } from './header/logo/logo.component';
 import { ClassDirectivesComponent } from './class3-directives/class-directives.component';
 import { ClassDatabindingComponent } from './class2-databinding/class-databinding.component';
 import { ClassAttDirectiveComponent } from './class4-att-directive/class-att-directive.component';
+import { ProductComponent } from './class4-practice/example1/products/product.component';
+import { ProductsComponent } from './class4-practice/example2/products/products.component';
+import { FormComponent } from './class4-practice/example2/products/form/form.component';
+import { ListingComponent } from './class4-practice/example2/products/listing/listing.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,10 @@ import { ClassAttDirectiveComponent } from './class4-att-directive/class-att-dir
     ClassDirectivesComponent,
     ClassDatabindingComponent,
     ClassAttDirectiveComponent,
+    ProductComponent,
+    ProductsComponent,
+    FormComponent,
+    ListingComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

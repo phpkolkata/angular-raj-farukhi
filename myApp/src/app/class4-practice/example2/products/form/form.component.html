@@ -1,0 +1,8 @@
+<form>
+  Name:<input type="text" name="pname" [(ngModel)]="pname" /><br />
+  Price:<input type="number" name="price" [(ngModel)]="price" /><br />
+  <button class="btn btn-primary me-2 mt-2" (click)="addProduct()">
+    Add Normal Product
+  </button>
+  <button class="btn btn-info mt-2">Add Discount Product</button>
+</form>

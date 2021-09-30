@@ -1,0 +1,15 @@
+<h1>Add Product</h1>
+<form>
+  Name:<input type="text" name="pname" [(ngModel)]="pname" /><br />
+  Price:<input type="number" name="price" [(ngModel)]="price" /><br />
+  <button class="btn btn-primary me-2 mt-2" (click)="addProduct()">
+    Add Normal Product
+  </button>
+  <button class="btn btn-info mt-2">Add Discount Product</button>
+</form>
+<hr />
+<h1>Product Listing</h1>
+
+<ul *ngFor="let p of products">
+  <li>{{ p.pname }} - Rs{{ p.price }}</li>
+</ul>
