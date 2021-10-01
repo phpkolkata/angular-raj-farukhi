@@ -1,0 +1,34 @@
+Input - {{ name }}<br />
+<ng-content></ng-content>
+
+<h1>Angular Lifecycle</h1>
+<div class="card w-50 mx-auto">
+  <ol class="list-group">
+    <li class="list-group-item">
+      ngOnChanges - called after a input(@Input) property changes
+    </li>
+    <li class="list-group-item">
+      ngOnInit - called once the component is initialized, not visible
+    </li>
+    <li class="list-group-item">
+      ngOnDoCheck - it runs lots time, whenever the angular runs change
+      detection, like value cahnges, dom change, button click
+    </li>
+    <li class="list-group-item">
+      ngAfterContentInit - called every time after content (ng-content)
+      projected in view
+    </li>
+    <li class="list-group-item">
+      ngAfterContentChecked - called every time (ng-content) projected in view
+    </li>
+    <li class="list-group-item">
+      ngOnViewInit - called once the view of the component is initialized
+    </li>
+    <li class="list-group-item">
+      ngOnViewChecked - called every time the view has any changes
+    </li>
+    <li class="list-group-item">
+      ngOnDestroy - called when the component is about to destroy
+    </li>
+  </ol>
+</div>

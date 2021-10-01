@@ -13,6 +13,8 @@ import { ProductComponent } from './class4-practice/example1/products/product.co
 import { ProductsComponent } from './class4-practice/example2/products/products.component';
 import { FormComponent } from './class4-practice/example2/products/form/form.component';
 import { ListingComponent } from './class4-practice/example2/products/listing/listing.component';
+import { LifecycleComponent } from './class5-lifecycle/lifecycle/lifecycle.component';
+import { Class5ViewChildComponent } from './class5-view-child/class5-view-child.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ListingComponent } from './class4-practice/example2/products/listing/li
     ProductsComponent,
     FormComponent,
     ListingComponent,
+    LifecycleComponent,
+    Class5ViewChildComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
