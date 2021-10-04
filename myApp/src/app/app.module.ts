@@ -15,6 +15,9 @@ import { FormComponent } from './class4-practice/example2/products/form/form.com
 import { ListingComponent } from './class4-practice/example2/products/listing/listing.component';
 import { LifecycleComponent } from './class5-lifecycle/lifecycle/lifecycle.component';
 import { Class5ViewChildComponent } from './class5-view-child/class5-view-child.component';
+import { MyDateComponent } from './class6-child-children/my-date/my-date.component';
+import { MainComponent } from './class6-child-children/main/main.component';
+import { MyPageComponent } from './class6-child-children/my-page/my-page.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { Class5ViewChildComponent } from './class5-view-child/class5-view-child.
     ListingComponent,
     LifecycleComponent,
     Class5ViewChildComponent,
+    MyDateComponent,
+    MainComponent,
+    MyPageComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
