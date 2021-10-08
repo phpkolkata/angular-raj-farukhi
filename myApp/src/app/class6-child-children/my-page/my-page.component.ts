@@ -7,6 +7,7 @@ import {
   QueryList,
 } from '@angular/core';
 import { MyDateComponent } from '../my-date/my-date.component';
+import { LoggerService } from '../../global/logger.service';
 
 @Component({
   selector: 'app-my-page',
@@ -17,9 +18,11 @@ export class MyPageComponent implements OnInit, AfterContentInit {
   // @ContentChild(MyDateComponent) myDate: MyDateComponent = <MyDateComponent>{};
   @ContentChildren(MyDateComponent) myDate!: QueryList<MyDateComponent>;
 
-  constructor() {}
+  constructor(public srvLogger: LoggerService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.srvLogger.sayBye();
+  }
 
   ngAfterContentInit() {
     console.log(this.myDate.toArray()[0].today);
