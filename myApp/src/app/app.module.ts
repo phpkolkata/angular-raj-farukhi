@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { Router, RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,6 +19,21 @@ import { Class5ViewChildComponent } from './class5-view-child/class5-view-child.
 import { MyDateComponent } from './class6-child-children/my-date/my-date.component';
 import { MainComponent } from './class6-child-children/main/main.component';
 import { MyPageComponent } from './class6-child-children/my-page/my-page.component';
+import { HomeComponent } from './class7-routes/home/home.component';
+import { Page1Component } from './class7-routes/page1/page1.component';
+import { Page2Component } from './class7-routes/page2/page2.component';
+
+const myRoute: Routes = [
+  { path: '', component: HomeComponent },
+  {
+    path: 'page1',
+    component: Page1Component,
+  },
+  {
+    path: 'page2/:id',
+    component: Page2Component,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -37,8 +53,11 @@ import { MyPageComponent } from './class6-child-children/my-page/my-page.compone
     MyDateComponent,
     MainComponent,
     MyPageComponent,
+    HomeComponent,
+    Page1Component,
+    Page2Component,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(myRoute)],
   providers: [],
   bootstrap: [AppComponent],
 })

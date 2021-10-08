@@ -11,6 +11,4 @@ export class LoggerService {
   sayBye() {
     console.log('bye');
   }
-
-  // addProduct
 }
