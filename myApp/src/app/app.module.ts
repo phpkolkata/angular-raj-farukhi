@@ -22,9 +22,13 @@ import { MyPageComponent } from './class6-child-children/my-page/my-page.compone
 import { HomeComponent } from './class7-routes/home/home.component';
 import { Page1Component } from './class7-routes/page1/page1.component';
 import { Page2Component } from './class7-routes/page2/page2.component';
+import { Page3Component } from './class7-routes/page3/page3.component';
+import { Page4Component } from './class7-routes/page4/page4.component';
+import { CategoriesComponent } from './class7-routes/categories/categories.component';
+import { CategoryComponent } from './class7-routes/categories/category/category.component';
 
 const myRoute: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: Page1Component },
   {
     path: 'page1',
     component: Page1Component,
@@ -32,6 +36,24 @@ const myRoute: Routes = [
   {
     path: 'page2/:id',
     component: Page2Component,
+  },
+  {
+    path: 'page3',
+    component: Page3Component,
+  },
+  {
+    path: 'page4',
+    component: Page4Component,
+  },
+  {
+    path: 'categories',
+    component: CategoriesComponent,
+    children: [
+      {
+        path: ':id',
+        component: CategoryComponent,
+      },
+    ],
   },
 ];
 
@@ -56,6 +78,9 @@ const myRoute: Routes = [
     HomeComponent,
     Page1Component,
     Page2Component,
+    Page3Component,
+    Page4Component,
+    CategoriesComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(myRoute)],
   providers: [],

@@ -1,0 +1,17 @@
+<h1>categories</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a [routerLink]="['/categories', '1']"> Nokia </a>
+        </li>
+        <li class="list-group-item">Samsung</li>
+        <li class="list-group-item">Lava</li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,8 @@ export class Page2Component implements OnInit {
   ngOnInit(): void {
     // snapshot way
     // this.urlId = this.route.snapshot.params['id'];
+
+    // observable way
     this.route.params.subscribe((data) => {
       console.log('data', data);
       this.urlId = data.id;

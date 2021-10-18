@@ -29,8 +29,41 @@
             aria-current="page"
             [routerLink]="['page2', myvar]"
             routerLinkActive="focus"
-            >Page2</a
           >
+            Page2
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            [routerLink]="['page3']"
+            routerLinkActive="focus"
+            fragment="about"
+          >
+            Page3
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            [routerLink]="['page4']"
+            [queryParams]="{ name: 'raj', age: 12 }"
+            routerLinkActive="focus"
+          >
+            Page4
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            [routerLink]="['categories']"
+            routerLinkActive="focus"
+          >
+            Categories
+          </a>
         </li>
       </ul>
       <form class="d-flex">
@@ -45,4 +78,5 @@
     </div>
   </div>
 </nav>
+
 <router-outlet></router-outlet>
