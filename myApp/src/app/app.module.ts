@@ -26,12 +26,16 @@ import { Page3Component } from './class7-routes/page3/page3.component';
 import { Page4Component } from './class7-routes/page4/page4.component';
 import { CategoriesComponent } from './class7-routes/categories/categories.component';
 import { CategoryComponent } from './class7-routes/categories/category/category.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './global/guard/auth.guard';
 
 const myRoute: Routes = [
   { path: '', component: Page1Component },
   {
     path: 'page1',
     component: Page1Component,
+    canActivate: [AuthGuard],
   },
   {
     path: 'page2/:id',
@@ -48,12 +52,25 @@ const myRoute: Routes = [
   {
     path: 'categories',
     component: CategoriesComponent,
+    canActivateChild: [AuthGuard],
     children: [
       {
         path: ':id',
         component: CategoryComponent,
       },
     ],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
   },
 ];
 
@@ -81,6 +98,7 @@ const myRoute: Routes = [
     Page3Component,
     Page4Component,
     CategoriesComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(myRoute)],
   providers: [],

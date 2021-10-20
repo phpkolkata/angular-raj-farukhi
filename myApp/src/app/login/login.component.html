@@ -1,0 +1,7 @@
+<p>login!</p>
+<button class="btn btn-primary" *ngIf="!srvAuth.isLogin" (click)="login()">
+  Login
+</button>
+<button class="btn btn-danger" *ngIf="srvAuth.isLogin" (click)="logout()">
+  Logout
+</button>
