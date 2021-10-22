@@ -29,6 +29,8 @@ import { CategoryComponent } from './class7-routes/categories/category/category.
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './global/guard/auth.guard';
+import { ObservablesComponent } from './class8-observable/observables/observables.component';
+import { MyObservableComponent } from './class8-observable/my-observable/my-observable.component';
 
 const myRoute: Routes = [
   { path: '', component: Page1Component },
@@ -65,6 +67,14 @@ const myRoute: Routes = [
     component: LoginComponent,
   },
   {
+    path: 'observable',
+    component: ObservablesComponent,
+  },
+  {
+    path: 'my-observable',
+    component: MyObservableComponent,
+  },
+  {
     path: 'not-found',
     component: NotFoundComponent,
   },
@@ -99,6 +109,8 @@ const myRoute: Routes = [
     Page4Component,
     CategoriesComponent,
     LoginComponent,
+    ObservablesComponent,
+    MyObservableComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(myRoute)],
   providers: [],

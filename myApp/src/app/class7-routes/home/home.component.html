@@ -75,8 +75,28 @@
             Login
           </a>
         </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            [routerLink]="['observable']"
+            routerLinkActive="focus"
+          >
+            rxjs Observable
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            [routerLink]="['my-observable']"
+            routerLinkActive="focus"
+          >
+            custom Observable
+          </a>
+        </li>
       </ul>
-      <form class="d-flex">
+      <!-- <form class="d-flex">
         <input
           class="form-control me-2"
           type="search"
@@ -84,7 +104,7 @@
           aria-label="Search"
         />
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> -->
     </div>
   </div>
 </nav>
