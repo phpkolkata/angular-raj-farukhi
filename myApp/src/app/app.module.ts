@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -25,64 +25,10 @@ import { Page2Component } from './class7-routes/page2/page2.component';
 import { Page3Component } from './class7-routes/page3/page3.component';
 import { Page4Component } from './class7-routes/page4/page4.component';
 import { CategoriesComponent } from './class7-routes/categories/categories.component';
-import { CategoryComponent } from './class7-routes/categories/category/category.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './global/guard/auth.guard';
 import { ObservablesComponent } from './class8-observable/observables/observables.component';
 import { MyObservableComponent } from './class8-observable/my-observable/my-observable.component';
-
-const myRoute: Routes = [
-  { path: '', component: Page1Component },
-  {
-    path: 'page1',
-    component: Page1Component,
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'page2/:id',
-    component: Page2Component,
-  },
-  {
-    path: 'page3',
-    component: Page3Component,
-  },
-  {
-    path: 'page4',
-    component: Page4Component,
-  },
-  {
-    path: 'categories',
-    component: CategoriesComponent,
-    canActivateChild: [AuthGuard],
-    children: [
-      {
-        path: ':id',
-        component: CategoryComponent,
-      },
-    ],
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'observable',
-    component: ObservablesComponent,
-  },
-  {
-    path: 'my-observable',
-    component: MyObservableComponent,
-  },
-  {
-    path: 'not-found',
-    component: NotFoundComponent,
-  },
-  {
-    path: '**',
-    redirectTo: 'not-found',
-  },
-];
+import { TdFormsComponent } from './class7-routes/td-forms/td-forms.component';
 
 @NgModule({
   declarations: [
@@ -111,8 +57,9 @@ const myRoute: Routes = [
     LoginComponent,
     ObservablesComponent,
     MyObservableComponent,
+    TdFormsComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(myRoute)],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

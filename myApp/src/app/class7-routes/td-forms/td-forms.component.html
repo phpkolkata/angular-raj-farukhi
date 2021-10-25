@@ -1,0 +1,9 @@
+<form #frm="ngForm" (ngSubmit)="onSubmit()">
+  Name:<input type="text" ngModel name="uname" required #nm="ngModel" />
+  {{ nm.errors | json }}
+  <br />
+  Age:<input type="number" ngModel name="age" required max="10" /><br />
+  email:<input type="number" ngModel name="age" required /><br />
+  <button>submit</button>
+</form>
+<!-- [disabled]="!frm.valid" -->
