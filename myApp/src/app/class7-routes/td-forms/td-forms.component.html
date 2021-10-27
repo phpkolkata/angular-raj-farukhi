@@ -1,9 +1,42 @@
+<h1>User Form</h1>
 <form #frm="ngForm" (ngSubmit)="onSubmit()">
   Name:<input type="text" ngModel name="uname" required #nm="ngModel" />
   {{ nm.errors | json }}
   <br />
   Age:<input type="number" ngModel name="age" required max="10" /><br />
-  email:<input type="number" ngModel name="age" required /><br />
-  <button>submit</button>
+  email:<input type="text" ngModel name="email" required /><br />
+  Gender:
+  <div *ngFor="let gender of genders">
+    <label>{{ gender }}</label>
+    <input type="radio" name="gender" [ngModel]="'female'" [value]="gender" />
+  </div>
+
+  <hr />
+  <h2>Shipping Details</h2>
+  <div ngModelGroup="shipping_info">
+    Address:<input type="text" ngModel name="address" /><br />
+    Pin:<input type="text" ngModel name="pin" /><br />
+  </div>
+  <button class="btn btn-primary m-4" type="button" (click)="onSetValue()">
+    set Value
+  </button>
+
+  <button class="btn btn-primary m-4" type="button" (click)="onPatchValue()">
+    patch Value
+  </button>
+
+  <button class="btn btn-primary m-4" type="button" (click)="onGetValue()">
+    get Value
+  </button>
+
+  <button class="btn btn-primary m-4" type="button" (click)="onReset()">
+    reset
+  </button>
+
+  <button class="btn btn-info m-4">submit</button>
 </form>
 <!-- [disabled]="!frm.valid" -->
+
+<hr />
+<div *ngIf="myForm.age">AGe:{{ myForm.age }}</div>
+<div *ngIf="myForm.email">email:{{ myForm.email }}</div>
