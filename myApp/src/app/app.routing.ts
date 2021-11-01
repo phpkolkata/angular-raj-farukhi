@@ -11,6 +11,7 @@ import { ObservablesComponent } from './class8-observable/observables/observable
 import { AuthGuard } from './global/guard/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { TdFormsComponent } from './class7-routes/td-forms/td-forms.component';
+import { ReactiveFormsComponent } from './class7-routes/reactive-forms/reactive-forms.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const myRoute: Routes = [
@@ -54,6 +55,10 @@ const myRoute: Routes = [
   {
     path: 'my-observable',
     component: MyObservableComponent,
+  },
+  {
+    path: 'reactive-form',
+    component: ReactiveFormsComponent,
   },
   {
     path: 'td-form',

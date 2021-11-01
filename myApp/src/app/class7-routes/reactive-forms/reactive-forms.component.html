@@ -1,0 +1,8 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  Name:<input type="text" name="nm" formControlName="nm" /><br />
+  Age:<input type="text" name="age" formControlName="age" /><br />
+  <div *ngFor="let g of gender">
+    <input type="radio" />
+  </div>
+  <button>submit</button>
+</form>

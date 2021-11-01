@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
@@ -29,6 +29,7 @@ import { LoginComponent } from './login/login.component';
 import { ObservablesComponent } from './class8-observable/observables/observables.component';
 import { MyObservableComponent } from './class8-observable/my-observable/my-observable.component';
 import { TdFormsComponent } from './class7-routes/td-forms/td-forms.component';
+import { ReactiveFormsComponent } from './class7-routes/reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -58,8 +59,9 @@ import { TdFormsComponent } from './class7-routes/td-forms/td-forms.component';
     ObservablesComponent,
     MyObservableComponent,
     TdFormsComponent,
+    ReactiveFormsComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
