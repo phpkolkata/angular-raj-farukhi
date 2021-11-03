@@ -1,8 +1,32 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-  Name:<input type="text" name="nm" formControlName="nm" /><br />
-  Age:<input type="text" name="age" formControlName="age" /><br />
+  Name:<input type="text" formControlName="nm1" /><br />
+  Name2:<input type="text" formControlName="nm2" />
+  <span *ngIf="myForm.get('nm1')?.invalid && myForm.get('nm')?.touched">
+    name required
+  </span>
+  <span *ngIf="myForm.get('nm1')?.value !== myForm.get('nm2')?.value">
+    name must be similar
+  </span>
+  <br />
+  Age:<input type="text" formControlName="age" /><br />
+  Gender:
   <div *ngFor="let g of gender">
-    <input type="radio" />
+    <input type="radio" formControlName="gender" [value]="g" />
+    {{ g }}
+  </div>
+
+  <div formArrayName="hobbies">
+    <h2>Hobbies</h2>
+    <button type="button" (click)="onAddHobby()">add hobby</button>
+    <div *ngFor="let hobbyControl of hobbyArray['controls']; let i = index">
+      <input type="text" [formControlName]="i" />
+    </div>
+  </div>
+
+  <div formGroupName="shipping_details">
+    <h2>Shipping Details</h2>
+    address:<input type="text" formControlName="address" /><br />
+    Pin:<input type="text" formControlName="pin" /><br />
   </div>
   <button>submit</button>
 </form>
