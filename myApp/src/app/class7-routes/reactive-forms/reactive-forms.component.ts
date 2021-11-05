@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormArray,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -10,12 +18,23 @@ export class ReactiveFormsComponent implements OnInit {
   // FormGroup, FormGroupName,FormControlName
   myForm!: FormGroup;
   gender = ['male', 'female', 'other'];
+  forbiddenNames = ['asif', 'raj'];
+
   constructor() {}
 
   ngOnInit(): void {
     this.myForm = new FormGroup({
-      nm1: new FormControl('raj', Validators.required),
+      nm1: new FormControl('raj', [
+        Validators.required,
+        Validators.maxLength(5),
+        this.forbiddenName.bind(this),
+      ]),
       nm2: new FormControl('raj', Validators.required),
+      email: new FormControl(
+        '',
+        [Validators.required, this.forbiddenEmail],
+        this.forbiddenEmail.bind(this)
+      ),
       age: new FormControl('12', Validators.max(20)),
       gender: new FormControl('female'),
       hobbies: new FormArray([]),
@@ -24,6 +43,35 @@ export class ReactiveFormsComponent implements OnInit {
         pin: new FormControl('asdf'),
       }),
     });
+  }
+
+  forbiddenName(control: FormControl): { [key: string]: boolean } | null {
+    if (this.forbiddenNames.indexOf(control.value) !== -1) {
+      return { forbiddenName: true };
+    } else {
+      return null; // alwasy return null, not false;
+    }
+
+    // if (control.value == 'raj') {
+    //   return { forbiddenName: true };
+    // } else {
+    //   return null;
+    // }
+  }
+
+  forbiddenEmail(
+    control: AbstractControl
+  ): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
+    const promise = new Promise<ValidationErrors | null>((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value == 'test@test.com') {
+          return resolve({ forbiddenEmail: true });
+        } else {
+          return resolve(null);
+        }
+      }, 1000);
+    });
+    return promise;
   }
 
   get hobbyArray() {

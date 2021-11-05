@@ -1,12 +1,20 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
   Name:<input type="text" formControlName="nm1" /><br />
   Name2:<input type="text" formControlName="nm2" />
-  <span *ngIf="myForm.get('nm1')?.invalid && myForm.get('nm')?.touched">
-    name required
-  </span>
-  <span *ngIf="myForm.get('nm1')?.value !== myForm.get('nm2')?.value">
+  {{ myForm.get("nm1")?.touched }}
+
+  <div *ngIf="myForm.get('nm1')?.invalid && myForm.get('nm1')?.touched">
+    <div *ngIf="myForm.get('nm1')?.errors?.required">Name is required</div>
+    <div *ngIf="myForm.get('nm1')?.errors?.maxlength?.actualLength">
+      Name must be max 5 chars
+    </div>
+  </div>
+  <!-- <span *ngIf="myForm.get('nm1')?.value !== myForm.get('nm2')?.value">
     name must be similar
-  </span>
+  </span> -->
+  <br />
+  Email:<input type="text" formControlName="email" />
+  <span>{{ myForm.get("email")?.errors | json }}</span>
   <br />
   Age:<input type="text" formControlName="age" /><br />
   Gender:
