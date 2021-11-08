@@ -12,6 +12,7 @@ import { AuthGuard } from './global/guard/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { TdFormsComponent } from './class7-routes/td-forms/td-forms.component';
 import { ReactiveFormsComponent } from './class7-routes/reactive-forms/reactive-forms.component';
+import { PipesComponent } from './class7-routes/pipes/pipes.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const myRoute: Routes = [
@@ -63,6 +64,10 @@ const myRoute: Routes = [
   {
     path: 'td-form',
     component: TdFormsComponent,
+  },
+  {
+    path: 'pipes',
+    component: PipesComponent,
   },
   {
     path: 'not-found',

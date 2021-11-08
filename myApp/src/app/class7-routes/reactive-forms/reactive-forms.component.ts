@@ -30,11 +30,7 @@ export class ReactiveFormsComponent implements OnInit {
         this.forbiddenName.bind(this),
       ]),
       nm2: new FormControl('raj', Validators.required),
-      email: new FormControl(
-        '',
-        [Validators.required, this.forbiddenEmail],
-        this.forbiddenEmail.bind(this)
-      ),
+      email: new FormControl('', [Validators.required], this.forbiddenEmail),
       age: new FormControl('12', Validators.max(20)),
       gender: new FormControl('female'),
       hobbies: new FormArray([]),
@@ -42,6 +38,19 @@ export class ReactiveFormsComponent implements OnInit {
         address: new FormControl('test'),
         pin: new FormControl('asdf'),
       }),
+    });
+
+    // observable to receive value changes to the form
+    this.myForm.valueChanges.subscribe((data) => {
+      console.log('value', data);
+    });
+    // observable to reciev form status valid or invalid
+    this.myForm.statusChanges.subscribe((data) => {
+      console.log('status', data);
+    });
+    // observable to reciev any field status valid or invalid
+    this.myForm.get('email')?.statusChanges.subscribe((data) => {
+      console.log('emailstatus', data);
     });
   }
 
@@ -64,10 +73,10 @@ export class ReactiveFormsComponent implements OnInit {
   ): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
     const promise = new Promise<ValidationErrors | null>((resolve, reject) => {
       setTimeout(() => {
-        if (control.value == 'test@test.com') {
-          return resolve({ forbiddenEmail: true });
+        if (control.value == 'test') {
+          resolve({ forbiddenEmail: true });
         } else {
-          return resolve(null);
+          resolve(null);
         }
       }, 1000);
     });

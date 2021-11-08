@@ -30,6 +30,9 @@ import { ObservablesComponent } from './class8-observable/observables/observable
 import { MyObservableComponent } from './class8-observable/my-observable/my-observable.component';
 import { TdFormsComponent } from './class7-routes/td-forms/td-forms.component';
 import { ReactiveFormsComponent } from './class7-routes/reactive-forms/reactive-forms.component';
+import { PipesComponent } from './class7-routes/pipes/pipes.component';
+import { LimitPipe } from './class7-routes/pipes/Shorten.pipe';
+import { FilterPipe } from './class7-routes/pipes/Filter.pipe';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,9 @@ import { ReactiveFormsComponent } from './class7-routes/reactive-forms/reactive-
     MyObservableComponent,
     TdFormsComponent,
     ReactiveFormsComponent,
+    PipesComponent,
+    LimitPipe,
+    FilterPipe,
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],

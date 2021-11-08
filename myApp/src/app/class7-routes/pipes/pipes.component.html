@@ -1,0 +1,19 @@
+{{ name | uppercase }}
+<hr />
+{{ myDate | date }}
+<hr />
+{{ myDate | date: "shortDate" }}
+<hr />
+{{ myDate | date: "fullDate" }}
+<hr />
+{{ myDate | date: "fullDate" | uppercase }}
+<hr />
+{{ data | json }}
+<hr />
+{{ desc | limit: 20 }}
+<hr />
+{{ status | async }}
+<hr />
+<ul *ngFor="let itm of items | filter: filterargs">
+  <li>{{ itm.name }}</li>
+</ul>
