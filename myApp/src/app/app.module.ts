@@ -34,9 +34,7 @@ import { ReactiveFormsComponent } from './class7-routes/reactive-forms/reactive-
 import { PipesComponent } from './class7-routes/pipes/pipes.component';
 import { LimitPipe } from './class7-routes/pipes/Shorten.pipe';
 import { FilterPipe } from './class7-routes/pipes/Filter.pipe';
-import { ListProductComponent } from './products/list-product/list-product.component';
-import { AddProductComponent } from './products/add-product/add-product.component';
-import { ViewProductComponent } from './products/view-product/view-product.component';
+import { ProductModule } from './products/product.module';
 
 @NgModule({
   declarations: [
@@ -70,9 +68,6 @@ import { ViewProductComponent } from './products/view-product/view-product.compo
     PipesComponent,
     LimitPipe,
     FilterPipe,
-    ListProductComponent,
-    AddProductComponent,
-    ViewProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +75,7 @@ import { ViewProductComponent } from './products/view-product/view-product.compo
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ProductModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

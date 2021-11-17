@@ -14,9 +14,6 @@ import { TdFormsComponent } from './class7-routes/td-forms/td-forms.component';
 import { ReactiveFormsComponent } from './class7-routes/reactive-forms/reactive-forms.component';
 import { PipesComponent } from './class7-routes/pipes/pipes.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ListProductComponent } from './products/list-product/list-product.component';
-import { AddProductComponent } from './products/add-product/add-product.component';
-import { ViewProductComponent } from './products/view-product/view-product.component';
 
 const myRoute: Routes = [
   { path: '', component: Page1Component },
@@ -50,17 +47,8 @@ const myRoute: Routes = [
   },
   {
     path: 'products',
-    component: ListProductComponent,
-    children: [
-      {
-        path: 'add-product',
-        component: AddProductComponent,
-      },
-      {
-        path: 'view-product',
-        component: ViewProductComponent,
-      },
-    ],
+    loadChildren: () =>
+      import('./products/product.module').then((m) => m.ProductModule),
   },
 
   {
